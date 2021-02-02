@@ -1,3 +1,4 @@
+.gitignore
 *.cbp
 *.layout
 *.depend
