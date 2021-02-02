@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/jagottsicher/needfull-things.png?branch=main)](https://travis-ci.com/jagottsicher/needfull-things)
+[![Build Status](https://travis-ci.com/jagottsicher/needful-things.png?branch=main)](https://travis-ci.com/jagottsicher/needful-things)
 
 # needful-things
 
