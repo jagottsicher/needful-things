@@ -6,7 +6,7 @@ and how to include the header file in own projects
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h> // included only to be able to use 'bool' as type
+// #include <stdbool.h> // included only to be able to use 'bool' as type
 // #include <ncurses.h> // provides getch, but must be compiled with -ln option in gcc
 
 #include "needful-things.h"
