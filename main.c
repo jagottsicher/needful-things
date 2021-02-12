@@ -6,8 +6,6 @@ and how to include the header file in own projects
 
 #include <stdio.h>
 #include <stdlib.h>
-// #include <stdbool.h> // included only to be able to use 'bool' as type
-// #include <ncurses.h> // provides getch, but must be compiled with -ln option in gcc
 
 #include "needful-things.h"
 
@@ -21,7 +19,7 @@ int main()
     clearScreen();
 
     srand(time(NULL));
-    printf("As Will said: \"Let's play Dungeons and Dragons!\" A Number between 1 and 20.\n");
+    printf("As Will said: \"Let's play Dungeons and Dragons!\"We need a Number between 1 and 20.\n");
 
     printf("Press <Enter> to roll the dice!\n");
     printf("You throw a: ");

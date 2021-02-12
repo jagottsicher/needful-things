@@ -1,8 +1,10 @@
 #ifndef NEEDFUL-THINGS_H_INCLUDED
 #define NEEDFUL-THINGS_H_INCLUDED
 
-
 #endif // NEEDFUL-THINGS_H_INCLUDED
+
+// #include <stdbool.h> // included only to be able to use 'bool' as type
+// #include <ncurses.h> // provides getch, but must be compiled with -ln option in gcc
 
 // Return Type: int
 // Name: randomNumber
