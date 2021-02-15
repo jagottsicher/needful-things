@@ -25,6 +25,7 @@ int main()
     printf("You throw a: ");
     pressEnter();
     printf("%d\n", randomNumber(1,20));
+    printf("By the way the terminal width is %d and height is %d",checkAndSetConsoleDimensions(x), checkAndSetConsoleDimensions(y));
 
 return 0;
 }

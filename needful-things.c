@@ -1,6 +1,17 @@
 #include <time.h> // amongst others for random numbers
+#include <sys/ioctl.h> // for console dimensions
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <sys/ioctl.h>
+#include <string.h>
+#include <termios.h>
 
-// Definition/Implentation
+
+// Definition/Implementation
 int randomNumber(int lower, int upper)
 {
     int num = (rand() % (upper - lower + 1)) + lower;
@@ -8,13 +19,13 @@ int randomNumber(int lower, int upper)
     return num;
 }
 
-// Definition/Implentation
+// Definition/Implementation
 void clearScreen()
 {
     printf("\033[H\033[J");
 }
 
-// Definition/Implentation
+// Definition/Implementation
 int msleep(long tms)
 {
     struct timespec ts;
@@ -35,7 +46,7 @@ int msleep(long tms)
     return ret;
 }
 
-// Definition/Implentation
+// Definition/Implementation
 void pressEnter()
 {
     int input_key;
@@ -43,4 +54,13 @@ void pressEnter()
     // printf("press any key\n");
     scanf("%c", &input_key); // only works after any input ending with pressing <Enter>
     return; // returns no value
+}
+
+// get width ('x') or height ('anykey') of the console
+int checkAndSetConsoleDimensions(char xy)
+{
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    // printf ("\33[%d;%dH%d/%d",4, 2, w.ws_col, w.ws_row);
+    return (xy == 'x') ? w.ws_col : w.ws_row;
 }

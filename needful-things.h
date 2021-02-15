@@ -61,3 +61,7 @@ int msleep(long tms);
 // Parameters: None
 // Declaration waits for any key be pressed on keyboard
 void pressEnter();
+
+// get width ('x') or height ('anykey') of the terminal window
+int checkAndSetConsoleDimensions(char xy);
+
