@@ -34,6 +34,18 @@
 #define NEEDFUL-THINGS_H_INCLUDED
 
 #endif // NEEDFUL-THINGS_H_INCLUDED
+#include <time.h> // amongst others for random numbers
+#include <sys/ioctl.h> // for console dimensions
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <sys/ioctl.h>
+#include <string.h>
+#include <termios.h>
+
 
 // #include <stdbool.h> // included only to be able to use 'bool' as type
 // #include <ncurses.h> // provides getch, but must be compiled with -ln option in gcc
@@ -65,3 +77,14 @@ void pressEnter();
 // get width ('x') or height ('anykey') of the terminal window
 int checkAndSetConsoleDimensions(char xy);
 
+// Return Type: int
+// Name: mygetch
+// Parameters: None
+// Declaration will read one char from keyboard and return the ASCII-Val as int
+int mygetch (void);
+
+// Return Type: void
+// Name: showCursor
+// Parameters: bool
+// Declaration will show the cursor with 1, else will hide it
+void showCursor(bool show);

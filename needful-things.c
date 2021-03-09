@@ -10,7 +10,6 @@
 #include <string.h>
 #include <termios.h>
 
-
 // Definition/Implementation
 int randomNumber(int lower, int upper)
 {
@@ -46,7 +45,6 @@ int msleep(long tms)
     return ret;
 }
 
-// Definition/Implementation
 void pressEnter()
 {
     int input_key;
@@ -63,4 +61,31 @@ int checkAndSetConsoleDimensions(char xy)
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     // printf ("\33[%d;%dH%d/%d",4, 2, w.ws_col, w.ws_row);
     return (xy == 'x') ? w.ws_col : w.ws_row;
+}
+
+// mygetchar without wating and no return needed
+int mygetch (void) {
+    int ch;
+    struct termios oldt, newt;
+
+    tcgetattr ( STDIN_FILENO, &oldt );
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO );
+    tcsetattr ( STDIN_FILENO,TCSANOW, &newt );
+    ch = getchar();
+    tcsetattr ( STDIN_FILENO,TCSANOW, &oldt );
+
+    return ch;
+}
+
+// show the cursor with 1 turns off with 0
+void showCursor(bool show) {
+#define CSI "\e["
+  if (show) {
+    fputs(CSI "?25h", stdout);
+  }
+  else {
+    fputs(CSI "?25l", stdout);
+  }
+#undef CSI
 }
