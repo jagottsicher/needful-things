@@ -88,3 +88,9 @@ int mygetch (void);
 // Parameters: bool
 // Declaration will show the cursor with 1, else will hide it
 void showCursor(bool show);
+
+// Return Type: void
+// Name: upper_string
+// Parameters: char[]
+// Declaration will convert a given string to upercase ignoring non-letters
+void upper_string(char s[]);
